@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你能在巨蟹座心裡撐過幾天？</title>
+<meta property="og:title" content="你能在巨蟹座心裡撐過幾天？" />
+<meta property="og:description" content="10 天情境考驗，選錯即結束，看你能撐到第幾天 🦀" />
+<meta property="og:image" content="https://megapx-assets.dcard.tw/images/bebd9a0e-8329-49cb-b8be-395ae3ff6ae9/1280.webp" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="你能在巨蟹座心裡撐過幾天？" />
+<meta name="twitter:description" content="10 天情境考驗，選錯即結束，看你能撐到第幾天 🦀" />
+<meta name="twitter:image" content="https://megapx-assets.dcard.tw/images/bebd9a0e-8329-49cb-b8be-395ae3ff6ae9/1280.webp" />
+<style>
+  :root{
+    --bg: #0F2434;
+    --tide: #4A7C8C;
+    --tide-light: #7FB3C2;
+    --moon: #B8C9D9;
+    --pearl: #F0EDE6;
+    --coral: #D98C82;
+    --danger: #7A3B44;
+    --danger-light: #C06A6A;
+    --line: rgba(240,237,230,0.14);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: radial-gradient(ellipse at 50% -10%, #163449 0%, var(--bg) 55%, #071722 100%);
+    color: var(--pearl);
+    font-family: "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding: 32px 16px 64px;
+  }
+  .app{ width:100%; max-width: 640px; }
+  .hidden{ display:none !important; }
+
+  .intro{ text-align:center; padding: 60px 8px 20px; }
+  .intro-eyebrow{
+    font-size: 12px; letter-spacing: 4px; color: var(--tide-light);
+    text-transform:uppercase; margin-bottom: 22px;
+  }
+  .intro-title{
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700; font-size: 32px; line-height:1.4;
+    margin: 0 0 26px; color: var(--pearl); letter-spacing: 2px;
+  }
+  .intro-divider{
+    width: 40px; height: 1px; background: var(--tide-light);
+    margin: 0 auto 26px; opacity: 0.6;
+  }
+  .intro-text{
+    font-size: 15px; line-height: 2; color: var(--moon);
+    max-width: 440px; margin: 0 auto 40px;
+  }
+  .btn-start{
+    background: transparent; border: 1.5px solid var(--tide-light);
+    color: var(--tide-light); padding: 14px 36px; border-radius: 999px;
+    font-size: 14px; font-weight: 700; letter-spacing: 4px;
+    cursor: pointer; font-family: inherit; transition: all 0.3s ease;
+  }
+  .btn-start:hover{
+    background: var(--tide); border-color: var(--tide); color: var(--pearl);
+    box-shadow: 0 0 24px rgba(127,179,194,0.3);
+  }
+  .intro-rules{
+    margin-top: 44px; font-size: 12px;
+    color: rgba(184,201,217,0.5);
+    letter-spacing: 1px; line-height: 1.8;
+  }
+
+  .header{ text-align:center; margin-bottom: 20px; padding-top: 8px; }
+  .eyebrow{
+    font-size: 12px; letter-spacing: 3px; color: var(--tide-light);
+    text-transform:uppercase; margin-bottom: 10px;
+  }
+  h1{
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700; font-size: 24px; line-height:1.4;
+    margin: 0 0 10px; color: var(--pearl); letter-spacing: 1px;
+  }
+  .sub{ font-size: 13px; color: var(--moon); line-height: 1.7; opacity:0.9; }
+  .attempt-badge{
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 12px;
+    background: rgba(127,179,194,0.15);
+    border: 1px solid rgba(127,179,194,0.4);
+    border-radius: 999px;
+    font-size: 11px;
+    color: var(--tide-light);
+    letter-spacing: 1.5px;
+  }
+
+  .route-wrap{ position:relative; margin: 24px 0 28px; padding: 18px 6px; }
+  .route-line{
+    position:relative; height: 46px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .route-line::before{
+    content:"";
+    position:absolute; left:0; right:0; top:50%;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--line) 0 5px, transparent 5px 11px);
+    transform: translateY(-50%); z-index:0;
+  }
+  .moonphase{
+    position:relative; z-index:1;
+    width: 28px; height:28px;
+    border-radius: 50%;
+    background: #0B1D2A;
+    border: 1.5px solid var(--line);
+    flex-shrink:0;
+    transition: all 0.4s ease;
+    overflow:hidden;
+  }
+  .moonphase.passed{
+    background: radial-gradient(circle at 35% 35%, var(--moon), var(--tide) 70%);
+    border-color: var(--tide-light);
+    box-shadow: 0 0 10px rgba(184,201,217,0.4);
+  }
+  .moonphase.current{
+    background: radial-gradient(circle at 35% 35%, var(--pearl), var(--coral) 75%);
+    border-color: var(--pearl);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(217,140,130,0.2);
+  }
+  .moonphase.dead{
+    background: var(--danger);
+    border-color: var(--danger-light);
+  }
+  @media (max-width: 480px){
+    .route-line{ height:34px; }
+    .moonphase{ width:20px; height:20px; }
+  }
+
+  .card{
+    background: linear-gradient(180deg, #16303F 0%, #0F2634 100%);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+  .day-header{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 14px; flex-wrap:wrap;
+  }
+  .day-tag{
+    font-size: 12px; letter-spacing: 2px;
+    color: var(--coral); font-weight:700; text-transform:uppercase;
+  }
+  .stage-tag{
+    font-size: 11px;
+    padding: 3px 10px;
+    background: rgba(184,201,217,0.08);
+    border: 1px solid rgba(184,201,217,0.2);
+    border-radius: 999px;
+    color: var(--moon);
+    letter-spacing: 1.5px;
+  }
+  .scenario{
+    font-size: 16.5px; line-height: 1.85;
+    color: var(--pearl); margin-bottom: 22px;
+  }
+  .options{ display:flex; flex-direction:column; gap: 12px; }
+  .opt{
+    text-align:left;
+    background: rgba(240,237,230,0.03);
+    border: 1px solid var(--line);
+    color: var(--moon);
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 14.5px; line-height: 1.6;
+    cursor:pointer; transition: all 0.2s ease;
+    font-family:inherit;
+  }
+  .opt:hover{
+    border-color: var(--tide-light);
+    background: rgba(74,124,140,0.12);
+    color: var(--pearl);
+  }
+  .opt:disabled{ cursor:default; }
+  .opt.correct-flash{
+    border-color: var(--tide-light);
+    background: rgba(74,124,140,0.35);
+    color: var(--pearl);
+  }
+  .opt.wrong-flash{
+    border-color: var(--danger-light);
+    background: rgba(122,59,68,0.35);
+    color: var(--pearl);
+  }
+
+  .result-screen{ text-align:center; padding: 8px 4px; }
+  .result-days{
+    font-family:"Noto Serif TC", serif;
+    font-size: 54px; font-weight:700;
+    color: var(--pearl); margin: 6px 0 4px;
+  }
+  .result-days span{ font-size:22px; color:var(--moon); font-weight:400; }
+  .result-title{ font-size: 18px; font-weight:700; margin: 6px 0 6px; color: var(--coral); }
+  .result-persona{ font-size: 14px; color: var(--moon); margin-bottom: 14px; letter-spacing:1px; }
+  .result-desc{
+    font-size: 14.5px; line-height:1.85;
+    color: var(--moon); margin-bottom: 22px;
+  }
+  .retry-hint{
+    font-size: 12px;
+    color: rgba(127,179,194,0.75);
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .btn-row{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    border:none; padding: 12px 22px; border-radius: 999px;
+    font-size: 14px; font-weight:700; cursor:pointer; font-family:inherit;
+  }
+  .btn-primary{ background: var(--tide); color: var(--pearl); }
+
+  .footer-note{
+    text-align:center; font-size:12px;
+    color: rgba(184,201,217,0.5);
+    margin-top: 22px; line-height:1.7;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div id="intro" class="intro">
+    <div class="intro-eyebrow">挽回生存挑戰 · 巨蟹座</div>
+    <div class="intro-title">你能在巨蟹座心裡<br>撐過幾天？</div>
+    <div class="intro-divider"></div>
+    <div class="intro-text">
+      巨蟹座的殼不是裝飾，是防禦系統。<br>
+      ta給你看的，不一定是全部。ta不說的，不代表沒感覺。<br>
+      十天情境，每一步都在決定ta願不願意再打開一點。
+    </div>
+    <button class="btn-start" onclick="startQuiz()">開始挑戰</button>
+    <div class="intro-rules">共 10 題 · 每題四選一 · 選錯即結束 · 失敗後情境會變化</div>
+  </div>
+
+  <div id="quizWrap" class="hidden">
+    <div class="header">
+      <div class="eyebrow">挽回生存挑戰 · 巨蟹座</div>
+      <h1>你能在巨蟹座心裡撐過幾天？</h1>
+      <div id="attemptBadge" class="attempt-badge hidden"></div>
+    </div>
+
+    <div class="route-wrap"><div class="route-line" id="routeLine"></div></div>
+    <div class="card" id="card"></div>
+    <div class="footer-note">這是一份娛樂性格測驗，答案沒有標準對錯，僅供參考消遣 🦀</div>
+  </div>
+</div>
+
+<script>
+// A = 安全感給足, E = 情緒接住, P = 慢慢靠近
+const questions = [
+  {
+    day: 1, stage: "交往期",
+    variants: [
+      {
+        scenario: "交往中。ta今晚回來後一直很安靜，你問ta怎麼了，ta說「沒事」，但明顯臉色不好。",
+        options: [
+          { text: "說「好，那你休息一下，有需要再說」，給ta空間", correct:false, death:"巨蟹座說「沒事」不代表真的沒事——ta在等你繼續靠近，你退開了，ta覺得你不在乎。" },
+          { text: "繼續追問「真的沒事嗎，你看起來不太對」，讓ta知道你有察覺", correct:true, trait:'E' },
+          { text: "說「我看得出來你不開心，不用現在說，但我在」，然後陪在旁邊", correct:true, trait:'A' },
+          { text: "說「你這樣讓我不知道怎麼辦，你能不能告訴我發生什麼事」", correct:false, death:"把「你不說我不知道怎麼辦」的壓力推給ta，巨蟹座感到自己的情緒變成你的負擔。" }
+        ]
+      },
+      {
+        scenario: "交往中。ta傳訊息說「你今天有沒有在想我」，語氣有點試探。",
+        options: [
+          { text: "回「有啊，怎麼了」，簡短帶過", correct:false, death:"「怎麼了」讓ta覺得你把這句話當成問題要解決，不是真的想回應那個「想你」的感覺。" },
+          { text: "回「有，下午開會的時候還想到你之前說的那件事」，具體說出來", correct:true, trait:'E' },
+          { text: "回「當然有，你怎麼突然這樣問」，反問回去", correct:false, death:"反問回去讓ta感覺你在考驗ta為什麼問，巨蟹座的試探心理被識破，往殼裡縮。" },
+          { text: "直接打電話過去，不用訊息回，讓ta聽到你的聲音", correct:true, trait:'A' }
+        ]
+      }
+    ]
+  },
+  {
+    day: 2, stage: "交往期",
+    variants: [
+      {
+        scenario: "交往中。你們昨晚約好今天一起吃飯，但你臨時被朋友拉去，忘了傳訊息給ta。ta說「沒關係」但沒有再說話了。",
+        options: [
+          { text: "說「真的很抱歉，我下次一定不會這樣」，誠懇道歉", correct:false, death:"「下次一定不會」是承諾，不是理解。巨蟹座要的不是保證，是你知道ta現在心裡什麼感覺。" },
+          { text: "說「我知道你說沒關係，但我覺得你不是真的沒關係，對不對」，點出來", correct:true, trait:'E' },
+          { text: "傳一句「對不起，我讓你一個人等」，就這樣，不解釋原因", correct:true, trait:'A' },
+          { text: "解釋完整的來龍去脈，讓ta理解你不是故意的", correct:false, death:"解釋等於在幫自己辯護，巨蟹座感覺你把重心放在讓自己好過，不是讓ta好過。" }
+        ]
+      },
+      {
+        scenario: "交往中。ta最近對你冷淡了一些，訊息回覆變慢，見面也比較少話。",
+        options: [
+          { text: "假裝沒察覺，繼續正常互動，不想給ta壓力", correct:false, death:"巨蟹座在等你察覺ta的變化並主動問。你假裝沒注意，ta覺得你根本不在意。" },
+          { text: "直接問「你最近是不是有什麼事，我感覺你跟之前不太一樣」", correct:true, trait:'E' },
+          { text: "傳一句「不管你現在在想什麼，我都在」，不逼ta說，但讓ta知道", correct:true, trait:'A' },
+          { text: "也跟著冷淡，讓ta感覺到你也可以不主動", correct:false, death:"以冷制冷，巨蟹座感到被拋下，往殼裡縮得更深。" }
+        ]
+      }
+    ]
+  },
+  {
+    day: 3, stage: "交往期",
+    variants: [
+      {
+        scenario: "交往中。ta提到ta媽媽最近身體不太好，語氣很平靜，但你知道ta跟媽媽感情很好。",
+        options: [
+          { text: "說「那嚴重嗎，需要去看哪科，我幫你查一下」", correct:false, death:"立刻進入解決模式，巨蟹座感覺自己的擔心被當成問題等你處理，不是被接住。" },
+          { text: "說「聽起來你一定很擔心」，先說出ta的感受，再問ta需要什麼", correct:true, trait:'E' },
+          { text: "說「你要不要說說看，或者你只是想讓我知道就好」，讓ta決定怎麼被陪", correct:true, trait:'A' },
+          { text: "說「會沒事的，你媽媽那麼硬朗」，安慰ta不用擔心", correct:false, death:"否定ta的擔心，巨蟹座感覺自己的恐懼被你用一句話蓋過去了。" }
+        ]
+      },
+      {
+        scenario: "交往中。ta無意間提到「有時候覺得自己不夠好」，語氣很輕，像是說給自己聽的。",
+        options: [
+          { text: "說「你哪裡不夠好，你很好啊」，馬上否認", correct:false, death:"用稱讚反駁ta的感受，巨蟹座覺得你沒有真的聽到ta說了什麼。" },
+          { text: "說「你說這句話的時候，我想多了解一點——是什麼事讓你這樣覺得」", correct:true, trait:'E' },
+          { text: "不說話，靠過去握住ta的手，讓ta感覺到你在", correct:true, trait:'A' },
+          { text: "說「每個人偶爾都會這樣想，不要太在意」，想讓ta放寬心", correct:false, death:"「每個人都這樣」讓ta的感受變成一個普通現象，巨蟹座感覺被忽視了。" }
+        ]
+      }
+    ]
+  },
+  {
+    day: 4, stage: "交往期 · 裂痕",
+    variants: [
+      {
+        scenario: "交往中。你昨晚跟異性朋友出去沒有提前告訴ta，ta今天看到對方在限動打卡了你們的合照。ta說「沒關係，你交朋友很正常」，但之後就沉默了。",
+        options: [
+          { text: "說「真的沒事嗎，你說沒關係但我感覺你不太開心」，直接問出來", correct:true, trait:'E' },
+          { text: "說「我下次出去會先跟你說，你放心」，給承諾", correct:false, death:"只給承諾不問感受，巨蟹座覺得你在用保證把話題結束，而不是真的想知道ta現在怎麼了。" },
+          { text: "說「我知道這樣沒跟你說很不好，你有在意是正常的」，先承認ta的感受是合理的", correct:true, trait:'A' },
+          { text: "說「你說沒關係那就沒關係吧，我不想讓你覺得我要解釋太多」", correct:false, death:"信了「沒關係」就算了，巨蟹座的佔有慾沒有被正視，悶在心裡慢慢扣分。" }
+        ]
+      },
+      {
+        scenario: "交往中。ta說「你最近好像比較在乎朋友，我感覺我排在後面」。",
+        options: [
+          { text: "說「怎麼會，你最重要」，馬上否認", correct:false, death:"快速的否認讓巨蟹座感覺你在把這個話題擋回去，而不是真的想聽ta說的。" },
+          { text: "說「你有這種感覺，代表我確實讓你感覺到這樣了，你能告訴我是哪些事讓你覺得這樣嗎」", correct:true, trait:'E' },
+          { text: "說「我聽到你說的了，這件事我想認真想一想，你願意給我一點時間嗎」", correct:false, death:"「給我時間想」對巨蟹座來說等於你在拖延，ta需要的是現在就被回應。" },
+          { text: "說「你說的沒有錯，我最近確實沒有好好安排跟你的時間」，直接承認", correct:true, trait:'A' }
+        ]
+      }
+    ]
+  },
+  {
+    day: 5, stage: "快分手",
+    variants: [
+      {
+        scenario: "你們大吵一架，ta說了一句「我覺得你根本不懂我」，然後沉默了。",
+        options: [
+          { text: "說「我當然懂你，你說這話不公平」，反駁", correct:false, death:"反駁ta的感受，巨蟹座感到被否定，殼瞬間關起來。" },
+          { text: "說「你說我不懂你——你願意告訴我我哪裡讓你有這種感覺嗎」，認真想聽", correct:true, trait:'E' },
+          { text: "沉默一下，說「這句話讓我很難受，但我更想知道你為什麼這樣覺得」", correct:false, death:"先說自己難受，把焦點拉回自己，巨蟹座感覺ta的情緒反而要來照顧你。" },
+          { text: "走過去，不說話，就陪在ta旁邊，等ta準備好再說", correct:true, trait:'A' }
+        ]
+      },
+      {
+        scenario: "冷戰兩天後，ta傳了一句「我需要再想想」。你想回應。",
+        options: [
+          { text: "回「好，你想清楚再說，我等你」，給ta空間", correct:false, death:"「我等你」聽起來有點被動施壓，巨蟹座感覺你在等ta做決定，而不是想辦法靠近ta。" },
+          { text: "回「我知道。我這兩天也在想，如果你願意，我想聽你說說你在想什麼」", correct:true, trait:'E' },
+          { text: "回「不管你想到什麼結論，我都想讓你知道我沒有想放棄」，先表態", correct:true, trait:'A' },
+          { text: "回「我也需要想想，我們各自想清楚再說」，展示你也有自己的節奏", correct:false, death:"對等式的冷處理，巨蟹座解讀成你也在退，潮水加速退去。" }
+        ]
+      }
+    ]
+  },
+  {
+    day: 6, stage: "分手",
+    variants: [
+      {
+        scenario: "ta今天很平靜地說「我覺得我們在一起讓我很累，我想結束」。",
+        options: [
+          { text: "立刻說「你不要衝動，我們可以改變」，想說服ta留下", correct:false, death:"立刻說服等於否定ta的感受，巨蟹座感到ta認真做的決定被你輕易推翻。" },
+          { text: "說「你說很累——是我讓你累，還是這段關係讓你累，這兩個對我來說不一樣」，想真的搞懂", correct:true, trait:'E' },
+          { text: "說「我聽到了。你願意告訴我是從什麼時候開始的嗎，我想知道」", correct:true, trait:'A' },
+          { text: "說「好，如果你決定了我尊重」，平靜接受", correct:false, death:"太快的「尊重」讓巨蟹座覺得你根本不在乎，ta其實在等你說「我不想放棄」。" }
+        ]
+      },
+      {
+        scenario: "ta傳訊息「我覺得我們暫時分開比較好」。你看完後想回覆。",
+        options: [
+          { text: "打電話過去，想直接談", correct:false, death:"ta選擇用訊息說，是因為需要一點距離和時間。突然打電話讓巨蟹座感到被逼，更想關機。" },
+          { text: "回「我看到了。你說暫時——你有想過暫時是多久嗎，還是你也還不確定」", correct:true, trait:'E' },
+          { text: "回「好。不管你最後決定什麼，我想讓你知道我沒有消失」", correct:true, trait:'A' },
+          { text: "回「為什麼，我們哪裡出了問題」，想找原因", correct:false, death:"「哪裡出了問題」讓ta要在最脆弱的時刻整理出一份報告給你，巨蟹座更想逃。" }
+        ]
+      }
+    ]
+  },
+  {
+    day: 7, stage: "分手後",
+    variants: [
+      {
+        scenario: "分手一週。ta把你們的合照從限時精選裡全部移除了。",
+        options: [
+          { text: "傳訊息「我看到你把照片都移除了」，想讓ta知道你有注意到", correct:false, death:"點破ta的動作，巨蟹座感覺傷心的行為被放大檢視，更想關掉所有入口。" },
+          { text: "你也跟著把你這邊的合照移除，對等地清乾淨", correct:false, death:"對等式的清除，巨蟹座讀成你也想切乾淨，反而更確定分手是對的。" },
+          { text: "什麼都不做，你自己那邊的照片留著，不宣告、不展示", correct:true, trait:'A' },
+          { text: "在自己的限時動態發一張和ta無關的近況，讓ta知道你還活著", correct:true, trait:'P' }
+        ]
+      },
+      {
+        scenario: "分手兩週。ta傳訊息問你一件跟你們過去生活有關的小事——某間你們常去的咖啡廳幾點打烊。",
+        options: [
+          { text: "回答完後說「你要去喔，好久沒去了」，想聊開", correct:false, death:"把一個簡單問題拉成話題，巨蟹座感覺你在試圖延伸對話，警戒心升起。" },
+          { text: "直接回答，不多說", correct:true, trait:'A' },
+          { text: "回答後加一句「你去的話記得點那個我們以前都會點的」，帶一點共同記憶進去，很自然", correct:true, trait:'P' },
+          { text: "問「你要自己去嗎」，想探聽ta的狀況", correct:false, death:"用問題試探ta去的原因，巨蟹座感到被打量，對話直接降溫。" }
+        ]
+      }
+    ]
+  },
+  {
+    day: 8, stage: "挽回",
+    variants: [
+      {
+        scenario: "分手三週。你聽說ta最近狀態不太好，一個共同朋友說ta有點低落。",
+        options: [
+          { text: "傳訊息「聽說你最近不太好，你還好嗎」，直接問", correct:false, death:"讓ta知道你在打聽ta的狀況，巨蟹座感到隱私被侵犯，對你的警戒心上升。" },
+          { text: "什麼都不做，等ta自己願意說", correct:false, death:"這段時間完全沉默，巨蟹座感覺你根本不在意ta過得怎樣，距離拉得更遠。" },
+          { text: "傳一句你們以前喜歡的某樣東西——一首歌、一個梗，不提近況，就是傳過去", correct:true, trait:'P' },
+          { text: "傳一句「最近有想到你，不用回我，就是想讓你知道」", correct:true, trait:'A' }
+        ]
+      },
+      {
+        scenario: "分手三週。ta按了你一則舊貼文的讚——是你們交往期間發的那一則。",
+        options: [
+          { text: "私訊ta「你有看到那則貼文」", correct:false, death:"點破ta的互動，巨蟹座感覺自己的一個小動作被你盯著，以後更不敢留痕跡。" },
+          { text: "在那則貼文底下發一則新留言，想讓ta看到你的存在", correct:false, death:"在ta按讚的那則貼文操作，巨蟹座感覺你在刻意回應ta的訊號，壓迫感升起。" },
+          { text: "什麼都不做，繼續過你的生活，不點破也不回應", correct:true, trait:'A' },
+          { text: "幾天後發一則跟那則舊貼文有關的新內容，自然地延續，不是刻意的", correct:true, trait:'P' }
+        ]
+      }
+    ]
+  },
+  {
+    day: 9, stage: "挽回",
+    variants: [
+      {
+        scenario: "分手一個月。共同朋友辦了一個小聚會，你和ta都在。ta今晚一直沒有主動跟你說話，但你注意到ta有幾次看向你。",
+        options: [
+          { text: "主動走過去找ta說話，把握機會", correct:false, death:"ta在觀察你，你立刻衝過去，巨蟹座感到被追，往人群裡躲。" },
+          { text: "繼續跟其他人聊，讓ta繼續觀察你，不強迫任何互動", correct:true, trait:'P' },
+          { text: "在ta旁邊的空位自然坐下，不特別找話題，就是在附近", correct:true, trait:'A' },
+          { text: "在離開前走過去說「今天很高興見到你」，給ta一個收尾", correct:false, death:"「很高興見到你」讓剛才所有的自然都瞬間被定義成「你在等這個機會」，巨蟹座退後一步。" }
+        ]
+      },
+      {
+        scenario: "分手一個月。ta傳了一個你們以前喜歡的歌的連結，沒有說任何話。",
+        options: [
+          { text: "回「這首歌，你還記得」，想聊開", correct:false, death:"把ta的一個沉默動作轉成需要回應的話題，巨蟹座感覺被逼表態，開始後悔傳了。" },
+          { text: "也傳一首歌回去，不說話，讓音樂繼續說", correct:true, trait:'P' },
+          { text: "回一個聽歌的emoji，就這樣，接住ta的訊號但不放大", correct:true, trait:'A' },
+          { text: "回「謝謝你想到我」，想讓ta知道你感受到了", correct:false, death:"「謝謝你想到我」把ta的動作定義成ta在主動靠近，巨蟹座感到被看穿，下次不敢再試探。" }
+        ]
+      }
+    ]
+  },
+  {
+    day: 10, stage: "挽回最終",
+    variants: [
+      {
+        scenario: "分手兩個月。ta傳訊息「你最近過得怎樣」，就這樣，沒有前因後果。",
+        options: [
+          { text: "回「還好，你呢」，對等地問回去", correct:false, death:"對等式的回覆讓對話停在表面，巨蟹座感覺你沒有真的想讓這個對話走下去。" },
+          { text: "回「最近還行，有時候還是會想到一些事。你傳這句話——是有什麼嗎」，溫柔地問", correct:true, trait:'E' },
+          { text: "回「不算太好，但也在慢慢走。你呢，你這段時間怎麼樣」，真實回應，然後把話還給ta", correct:true, trait:'A' },
+          { text: "回「還不錯，謝謝你問」，輕描淡寫", correct:false, death:"「謝謝你問」讓ta的主動變成一種禮貌行為，巨蟹座不知道怎麼繼續往下說。" }
+        ]
+      },
+      {
+        scenario: "分手兩個月。ta約你出來「只是喝個咖啡」。你到了，ta已經在等你了，看起來有點緊張。",
+        options: [
+          { text: "一坐下就說「你找我出來，是有想說什麼嗎」，直接問", correct:false, death:"逼ta馬上表態，巨蟹座還沒準備好就被推到聚光燈下，反而把話縮回去。" },
+          { text: "先聊點輕鬆的，讓ta慢慢放鬆，等ta自己開口說想說的", correct:true, trait:'P' },
+          { text: "說「你看起來有點緊張」，笑著說，讓ta知道你有注意到，氣氛反而鬆了", correct:true, trait:'E' },
+          { text: "表現得很輕鬆自在，假裝這只是普通的朋友見面", correct:false, death:"過度輕鬆讓巨蟹座覺得你不把這次見面當一回事，鼓起勇氣來的ta開始懷疑自己是不是想太多。" }
+        ]
+      }
+    ]
+  }
+];
+
+const personas = {
+  A: { name: "讓她覺得安全的人", desc: "你不逼、不急、不消失。巨蟹座的殼不是用說服打開的，是用時間和穩定的存在感讓ta自己選擇打開——而你剛好就是那種讓ta覺得「在這個人面前不需要防衛」的人。" },
+  E: { name: "讓她覺得被懂的人", desc: "你看得出ta沒說出口的情緒，你先接住感受再說其他的。巨蟹座最怕被否定、被說「你想太多」，而你從來不這樣——你讓ta覺得自己的感受是合理的、是被在乎的。" },
+  P: { name: "讓她自己走過來的人", desc: "你懂得節奏，你知道巨蟹座急不得，你讓ta在觀察你、試探你的過程裡，慢慢發現自己想靠近你。你沒有追，但ta走過來了——因為你讓ta覺得走過來是安全的。" }
+};
+
+let attemptNumber = 1;
+let current = 0;
+let alive = true;
+let traitCounts = { A:0, E:0, P:0 };
+let currentVariants = [];
+
+function pickVariant(dayIdx){
+  const vs = questions[dayIdx].variants;
+  if(attemptNumber === 1) return vs[0];
+  if(attemptNumber === 2) return vs[1];
+  return vs[Math.floor(Math.random()*2)];
+}
+
+function initAttempt(){
+  currentVariants = [];
+  for(let i=0;i<questions.length;i++){
+    currentVariants[i] = pickVariant(i);
+  }
+  const badge = document.getElementById('attemptBadge');
+  if(attemptNumber > 1){
+    badge.textContent = `第 ${attemptNumber} 次挑戰 · 情境已更新`;
+    badge.classList.remove('hidden');
+  } else {
+    badge.classList.add('hidden');
+  }
+}
+
+function startQuiz(){
+  attemptNumber = 1;
+  current = 0;
+  alive = true;
+  traitCounts = { A:0, E:0, P:0 };
+  initAttempt();
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quizWrap').classList.remove('hidden');
+  renderQuestion();
+}
+
+function renderRoute(){
+  const line = document.getElementById('routeLine');
+  line.innerHTML = '';
+  for(let i=0;i<questions.length;i++){
+    const el = document.createElement('div');
+    let cls = 'moonphase';
+    if(i < current) cls += ' passed';
+    else if(i === current && alive) cls += ' current';
+    else if(i === current && !alive) cls += ' dead';
+    el.className = cls;
+    line.appendChild(el);
+  }
+}
+
+function renderQuestion(){
+  renderRoute();
+  const q = questions[current];
+  const v = currentVariants[current];
+  const card = document.getElementById('card');
+  card.innerHTML = `
+    <div class="day-header">
+      <span class="day-tag">DAY ${q.day} / 10</span>
+      <span class="stage-tag">${q.stage}</span>
+    </div>
+    <div class="scenario">${v.scenario}</div>
+    <div class="options" id="opts">
+      ${v.options.map((opt,i)=>`<button class="opt" data-i="${i}">${opt.text}</button>`).join('')}
+    </div>
+  `;
+  document.querySelectorAll('.opt').forEach(btn=>{
+    btn.addEventListener('click', ()=> handleAnswer(parseInt(btn.dataset.i)));
+  });
+}
+
+function handleAnswer(i){
+  const v = currentVariants[current];
+  const opt = v.options[i];
+  const buttons = document.querySelectorAll('.opt');
+  buttons.forEach(b=>b.disabled = true);
+
+  if(opt.correct){
+    buttons[i].classList.add('correct-flash');
+    if(opt.trait) traitCounts[opt.trait]++;
+    setTimeout(()=>{
+      current++;
+      if(current >= questions.length){
+        alive = true;
+        renderRoute();
+        showResult(true);
+      } else {
+        renderQuestion();
+      }
+    }, 550);
+  } else {
+    buttons[i].classList.add('wrong-flash');
+    alive = false;
+    setTimeout(()=>{
+      renderRoute();
+      showResult(false, opt.death, questions[current].day);
+    }, 650);
+  }
+}
+
+function topTrait(){
+  let best = 'A', bestVal = -1;
+  for(const k in traitCounts){
+    if(traitCounts[k] > bestVal){ bestVal = traitCounts[k]; best = k; }
+  }
+  return best;
+}
+
+function showResult(success, deathLine, dayReached){
+  const card = document.getElementById('card');
+  if(success){
+    const p = personas[topTrait()];
+    card.innerHTML = `
+      <div class="result-screen">
+        <div class="day-tag" style="color:var(--tide-light)">挑戰完成</div>
+        <div class="result-days">10<span> / 10 天</span></div>
+        <div class="result-title">月亮終於圓滿了 🌕</div>
+        <div class="result-persona">你的類型：${p.name}</div>
+        <div class="result-desc">${p.desc}</div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="restart()">再挑戰一次</button>
+        </div>
+      </div>
+    `;
+  } else {
+    card.innerHTML = `
+      <div class="result-screen">
+        <div class="day-tag" style="color:var(--danger-light)">潮水退去</div>
+        <div class="result-days">${dayReached - 1}<span> / 10 天</span></div>
+        <div class="result-title">你在第 ${dayReached} 天讓潮水退去了</div>
+        <div class="result-desc">${deathLine}</div>
+        <div class="retry-hint">下一次的情境會有變化 · 別靠記憶</div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="restart()">重新挑戰</button>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function restart(){
+  attemptNumber++;
+  current = 0;
+  alive = true;
+  traitCounts = { A:0, E:0, P:0 };
+  initAttempt();
+  renderQuestion();
+}
+</script>
+</body>
+</html>
